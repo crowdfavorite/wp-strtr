@@ -11,6 +11,7 @@ Some notable differences from Underscores:
 * Style variables, definitions, and code comments are in place to allow for maintaining vertical rhythm
 * Some additional (but minimal) styles have been incorporated to reduce the time to go from zero to presentable
 * Fonts are sized with pixels rather than rems
+* Sidebar widgets use h3 headers rather than h3
 
 ## Requirements
 
