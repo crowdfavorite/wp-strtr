@@ -108,6 +108,13 @@ address {
 	margin: 0 0 $vertical-unit;
 }
 
+table {
+	margin: 0 0 $vertical-unit;
+	table {
+		margin: 0;
+	}
+}
+
 pre {
 	@include pug-tab-size(2);
 	background: $color-background-pre;
@@ -137,6 +144,11 @@ mark, ins {
 
 big {
 	font-size: 125%;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
 }
 
 button,
