@@ -125,6 +125,73 @@ function strtr_scripts() {
 add_action( 'wp_enqueue_scripts', 'strtr_scripts' );
 
 /**
+ * Apply "async=async" attribute to selected enqueued JS.
+ *
+ * Any scripts you wish to have marked as "async" should be added within this
+ * method to the `$async_js` array. Only useful on script tags that include
+ * an `src` attribute (not inline scripts).
+ *
+ * The `async` attribute:
+ *
+ * "HTML parsing may continue and the script will be executed as soon as
+ *  it's ready."
+ * (From {@link http://peter.sh/experiments/asynchronous-and-deferred-javascript-execution-explained/)
+ *
+ * Call via `script_loader_tag` filter.
+ *
+ * @see https://developer.wordpress.org/reference/hooks/script_loader_tag/
+ *
+ * @return str
+ */
+function strtr_async_scripts( $tag, $handle ) {
+
+	// Populate with script handles to be async.
+	$async_js = array(
+		// ...
+	);
+
+	if ( in_array( $handle, $async_js ) ) {
+		return str_replace( ' src', ' async="async" src', $tag );
+	}
+	return $tag;
+}
+add_filter( 'script_loader_tag', 'strtr_async_scripts', 10, 2 );
+
+/**
+ * Apply "defer=defer" attribute to selected enqueued JS.
+ *
+ * Any scripts you wish to have marked as "defer" should be added within this
+ * method to the `$defer_js` array. Only useful on script tags that include
+ * an `src` attribute (not inline scripts).
+ *
+ * The `defer` attribute:
+ *
+ * "Simply put: delaying script execution until the HTML parser has finished.
+ *  A positive effect of this attribute is that the DOM will be available for
+ *  your script."
+ * (From {@link http://peter.sh/experiments/asynchronous-and-deferred-javascript-execution-explained/)
+ *
+ * Call via `script_loader_tag` filter.
+ *
+ * @see https://developer.wordpress.org/reference/hooks/script_loader_tag/
+ *
+ * @return str
+ */
+function strtr_defer_scripts( $tag, $handle ) {
+
+	// Populate with script handles to be deferred.
+	$defer_js = array(
+		// ...
+	);
+
+	if ( in_array( $handle, $defer_js ) ) {
+		return str_replace( ' src', ' defer="defer" src', $tag );
+	}
+	return $tag;
+}
+add_filter( 'script_loader_tag', 'strtr_defer_scripts', 10, 2 );
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
