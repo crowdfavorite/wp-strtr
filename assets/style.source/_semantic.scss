@@ -6,19 +6,27 @@ html {
 	box-sizing: border-box;
 }
 
-body,
+body {
+	color: $color-text-main;
+	font-family: $body-font-family;
+	font-size: $font-size-base;
+	font-weight: $body-font-weight-normal;
+	line-height: $line-height-base;
+}
+
 button,
 input,
 select,
 textarea {
-	color: $color-text-main;
-	font-family: $font-main;
+	color: $color-text-input;
+	font-family: $form-font-family;
 	font-size: $font-size-base;
+	font-weight: $form-font-weight-normal;
 	line-height: $line-height-base;
 }
 
 a {
-
+	transition: all 0.15s;
 	&,
 	&:link {
 		color: $color-link;
@@ -45,33 +53,35 @@ a {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	margin: ($vertical-unit*2) 0 $vertical-unit;
+	color: $color-text-headers;
+	font-family: $font-family-helvetica;
+	font-weight: $font-weight-bold-helvetica;
+	margin: 0 0 $vertical-unit;
 }
 
 h1 {
-	font-size: $font-size-base * 2.75;
-	line-height: $line-height-base * 2;
-	margin-top: 0;
+	font-size: $font-size-h1;
+	line-height: $line-height-h1;
 }
 h2 {
-	font-size: $font-size-base * 2;
-	line-height: $line-height-base * 1.5;
+	font-size: $font-size-h2;
+	line-height: $line-height-h2;
 }
 h3 {
-	font-size: $font-size-base * 1.5;
-	line-height: $line-height-base * 1.5;
+	font-size: $font-size-h3;
+	line-height: $line-height-h3;
 }
 h4 {
-	font-size: $font-size-base * 1.25;
-	line-height: $line-height-base * 1.5;
+	font-size: $font-size-h4;
+	line-height: $line-height-h4;
 }
 h5 {
-	font-size: $font-size-base * 1.15;
-	line-height: $line-height-base;
+	font-size: $font-size-h5;
+	line-height: $line-height-h5;
 }
 h6 {
-	font-size: $font-size-base * 1.15;
-	line-height: $line-height-base;
+	font-size: $font-size-h6;
+	line-height: $line-height-h6;
 }
 
 
@@ -117,7 +127,7 @@ table {
 pre {
 	@include pug-tab-size(2);
 	background: $color-background-pre;
-	font-family: $font-pre;
+	font-family: $pre-font-family;
 	font-size: 0.75em; // ems (not worried about nested <pre>s)
 	line-height: $vertical-unit * 1.5; // multiply by a .25-divisible value to (easily) maintain vert rhythm
 	margin-bottom: $vertical-unit;
@@ -127,7 +137,7 @@ pre {
 }
 
 code, kbd, tt, var {
-	font-family: $font-code;
+	font-family: $code-font-family;
 	font-size: 0.875em; // ems, not worried about nesting
 }
 

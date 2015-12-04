@@ -22,19 +22,21 @@ $color-white:    #FFFFFF;
 
 // -- By usage.
 $color-background-body: $color-white;
-$color-background-screen: #f1f1f1;
+$color-background-screen-reader: #f1f1f1;
 $color-background-hr: $color-gray;
 $color-background-button: #e6e6e6;
 $color-background-pre: $color-silver;
 $color-background-ins: #fff9c0;
 
-$color-text-screen: #21759b;
+$color-text-main: #404040;
+$color-text-headers: $color-gray;
+$color-text-screen-reader: #21759b;
 $color-text-input: #666;
 $color-text-input-focus: #111;
+
 $color-link: $color-blue;
 $color-link-visited: $color-blue;
 $color-link-hover: $color-navy;
-$color-text-main: #404040;
 
 $color-border-button: #ccc #ccc #bbb;
 $color-border-button-hover: #ccc #bbb #aaa;
@@ -47,12 +49,41 @@ $color-border-abbr: #666;
 // Content box shadows.
 $content-box-shadow: 0 4px 6px rgba(0,0,0,0.12);
 
-
 // Typography and vertical rhythm.
 // ===============================
-$font-main: sans-serif;
-$font-code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-$font-pre: "Courier 10 Pitch", Courier, monospace;
+
+// -- "helvetica"
+$font-family-helvetica: helvetica, sans-serif;
+$font-weight-normal-helvetica: normal;
+$font-weight-bold-helvetica: bold;
+
+// -- "monaco"
+$font-family-monaco: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+$font-weight-normal-monaco: normal;
+$font-weight-bold-monaco: bold;
+
+// -- "courier"
+$font-family-courier: "Courier 10 Pitch", Courier, monospace;
+$font-weight-normal-courier: normal;
+$font-weight-bold-courier: bold;
+
+// Define variables for usage of fonts, using the vars defined above.
+
+// -- body/copy text
+$body-font-family: $font-family-helvetica;
+$body-font-weight-normal: $font-weight-normal-helvetica;
+$body-font-weight-bold: $font-weight-bold-helvetica;
+
+// -- form elements (inputs, textareas, buttons)
+$form-font-family: $font-family-helvetica;
+$form-font-weight-normal: $font-weight-normal-helvetica;
+$form-font-weight-bold: $font-weight-bold-helvetica;
+
+// -- <code> tags
+$code-font-family: $font-family-monaco;
+
+// -- <pre> tags
+$pre-font-family: $font-family-monaco;
 
 // Set the vertical unit to a value that is smaller than
 // your target $line-height-base value (below) and can
@@ -72,6 +103,25 @@ $font-size-base: 18px;
 // and line-height (not a line-height that's relative to
 // font-size) so vertical rhythm is possible.
 $line-height-base: $vertical-unit * 1.5;
+
+// h1
+$font-size-h1: $font-size-base * 2.45;
+$line-height-h1: $line-height-base * 1.75;
+// h2
+$font-size-h2: $font-size-base * 1.5;
+$line-height-h2: $line-height-base * 1.125;
+// h3
+$font-size-h3: $font-size-base * 1.25;
+$line-height-h3: $line-height-base * 1.125;
+// h4
+$font-size-h4: $font-size-base * 1.25;
+$line-height-h4: $line-height-base*1.125;
+// h5
+$font-size-h5: $font-size-base * 1.15;
+$line-height-h5: $line-height-base*0.875;
+// h6
+$font-size-h6: $font-size-base;
+$line-height-h6: $line-height-base;
 
 // Dimensions
 // ==========
