@@ -5,7 +5,7 @@
 	width: 100%;
 
 	ul {
-		display: none;
+		display: block;
 		list-style: none;
 		margin: 0;
 		padding-left: 0;
@@ -80,41 +80,5 @@
 	.current_page_item > a,
 	.current-menu-item > a,
 	.current_page_ancestor > a {
-	}
-}
-
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
-}
-
-@media screen and (min-width: $bp-sm-min) {
-	.menu-toggle {
-		display: none;
-	}
-	.main-navigation ul {
-		display: block;
-	}
-}
-
-.comment-navigation,
-.posts-navigation,
-.post-navigation {
-
-	.site-main & {
-		margin: 0 0 $vertical-unit;
-		overflow: hidden;
-	}
-
-	& .nav-previous {
-		float: left;
-		width: 50%;
-	}
-
-	& .nav-next {
-		float: right;
-		text-align: right;
-		width: 50%;
 	}
 }

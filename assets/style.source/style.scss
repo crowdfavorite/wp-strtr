@@ -6,18 +6,14 @@
 @import "compass/utilities";
 @import "susy";
 @import "pug";
-@import "mixins-underscores"; // mixins ported from underscores
-@import "mixins-custom";      // mixins custom for this project
+@import "mixins/underscores"; // mixins ported from underscores
+@import "mixins/custom";      // mixins custom for this project
 
 // Now the rest of the style partials, from generic to specific.
 @import "lib/normalize";      // normalize (to remain unmodified)
 @import "semantic";           // custom semantic markup styles
 @import "wp-utilities";       // wp utility classes
-@import "wp-layout";          // site layout, dimensions
-@import "wp-menus";           // menus and navigation
-
-@import "wp-widgets";         // widget-related styles
-@import "wp-media";           // styles for wp media classes
-@import "wp-comments";        // styles for comments
-
 @import "main";               // main style partial
+@import "header";             // header, main navs
+@import "widgets";            // widget-related styles
+@import "comments";           // styles for comments
