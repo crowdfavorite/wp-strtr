@@ -84,66 +84,55 @@ function strtr_get_image_sizes( $size = null ) {
 	return $sizes;
 }
 
+/**
+ * Find out if a string has an embedded gallery shortcode.
+ *
+ * Returns true if the content has one or more galleries embedded in
+ * via the `[gallery]` shortcode. Be sure the content has not yet had
+ * `apply_filters('the_content')` applied yet.
+ *
+ * @param str $content
+ * @return bool
+ */
+function strtr_string_has_gallery_shortcode( $content ) {
+	// Check the post content for a gallery short code.
+	return ( strpos( $content, '[gallery' ) !== false ) ? true : false;
+}
 
 /**
- * Adds custom classes to the array of body classes.
+ * Get image IDs from a gallery shortcode.
  *
- * @param array $classes Classes for the body element.
+ * Assumes the $gallery param provided is just has a single
+ * gallery shortcode within.
+ *
+ * @param str $gallery
  * @return array
  */
-function strtr_body_classes( $classes ) {
-	// Adds a class of group-blog to blogs with more than 1 published author.
-	if ( is_multi_author() ) {
-		$classes[] = 'group-blog';
-	}
+function strtr_get_image_ids_from_gallery_shortcode( $gallery ) {
 
-	return $classes;
+  $pattern = get_shortcode_regex();
+  $matches = array();
+  preg_match_all( "/$pattern/" , $gallery, $matches );
+
+  $img_ids = array(); // We'll stash the image IDs here if we find any.
+
+  // We're assuming the provided content has just a single gallery shortcode,
+  // so we just grab the first gallery shortcode we find.
+  if ( isset( $matches[2][0] ) ) {
+
+    // Loop thru shortcode names to figure out the key to ref within
+    // the other child arrays of $matches.
+    foreach( $matches[2] as $sc_key => $sc_name ) {
+      if ( 'gallery' === strtolower( $sc_name ) ) {
+
+        // Parse the attributes (top-level key 3) for this 2nd-level key.
+        $attrs = shortcode_parse_atts( $matches[3][ $sc_key ] );
+        if ( is_array( $attrs ) && array_key_exists( 'ids', $attrs ) ) {
+          $img_ids_str =  preg_replace( '/\s+/', '', $attrs['ids'] );
+          $img_ids = explode( ',', $img_ids_str );
+        }
+      }
+    }
+  }
+  return $img_ids;
 }
-add_filter( 'body_class', 'strtr_body_classes' );
-
-if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
-	/**
-	 * Filters wp_title to print a neat <title> tag based on what is being viewed.
-	 *
-	 * @param string $title Default title text for current view.
-	 * @param string $sep Optional separator.
-	 * @return string The filtered title.
-	 */
-	function strtr_wp_title( $title, $sep ) {
-		if ( is_feed() ) {
-			return $title;
-		}
-
-		global $page, $paged;
-
-		// Add the blog name.
-		$title .= get_bloginfo( 'name', 'display' );
-
-		// Add the blog description for the home/front page.
-		$site_description = get_bloginfo( 'description', 'display' );
-		if ( $site_description && ( is_home() || is_front_page() ) ) {
-			$title .= " $sep $site_description";
-		}
-
-		// Add a page number if necessary.
-		if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
-			$title .= " $sep " . sprintf( esc_html__( 'Page %s', 'strtr' ), max( $paged, $page ) );
-		}
-
-		return $title;
-	}
-	add_filter( 'wp_title', 'strtr_wp_title', 10, 2 );
-
-	/**
-	 * Title shim for sites older than WordPress 4.1.
-	 *
-	 * @link https://make.wordpress.org/core/2014/10/29/title-tags-in-4-1/
-	 * @todo Remove this function when WordPress 4.3 is released.
-	 */
-	function strtr_render_title() {
-		?>
-		<title><?php wp_title( '|', true, 'right' ); ?></title>
-		<?php
-	}
-	add_action( 'wp_head', 'strtr_render_title' );
-endif;
