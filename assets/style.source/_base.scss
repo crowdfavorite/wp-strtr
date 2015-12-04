@@ -1,19 +1,39 @@
 
 // Colors
 // ======
-$color-background-body: #fff;
+// -- By color.
+$color-navy:     #001f3f;
+$color-blue:     #0074D9;
+$color-aqua:     #7FDBFF;
+$color-teal:     #39CCCC;
+$color-olive:    #3D9970;
+$color-green:    #2ECC40;
+$color-lime:     #01FF70;
+$color-yellow:   #FFDC00;
+$color-orange:   #FF851B;
+$color-red:      #FF4136;
+$color-maroon:   #85144B;
+$color-fuchsia:  #F012BE;
+$color-purple:   #B10DC9;
+$color-black:    #111111;
+$color-gray:     #AAAAAA;
+$color-silver:   #DDDDDD;
+$color-white:    #FFFFFF;
+
+// -- By usage.
+$color-background-body: $color-white;
 $color-background-screen: #f1f1f1;
-$color-background-hr: #ccc;
+$color-background-hr: $color-gray;
 $color-background-button: #e6e6e6;
-$color-background-pre: #eee;
+$color-background-pre: $color-silver;
 $color-background-ins: #fff9c0;
 
 $color-text-screen: #21759b;
 $color-text-input: #666;
 $color-text-input-focus: #111;
-$color-link: royalblue;
-$color-link-visited: purple;
-$color-link-hover: midnightblue;
+$color-link: $color-blue;
+$color-link-visited: $color-blue;
+$color-link-hover: $color-navy;
 $color-text-main: #404040;
 
 $color-border-button: #ccc #ccc #bbb;
@@ -21,6 +41,12 @@ $color-border-button-hover: #ccc #bbb #aaa;
 $color-border-button-focus: #aaa #bbb #bbb;
 $color-border-input: #ccc;
 $color-border-abbr: #666;
+
+// Other common style defs.
+// ========================
+// Content box shadows.
+$content-box-shadow: 0 4px 6px rgba(0,0,0,0.12);
+
 
 // Typography and vertical rhythm.
 // ===============================
@@ -30,11 +56,16 @@ $font-pre: "Courier 10 Pitch", Courier, monospace;
 
 // Set the vertical unit to a value that is smaller than
 // your target $line-height-base value (below) and can
-// be multiplied by a value such as 1.25 (included fractional
-// values should be .25, .5 or .75 so they can quickly
-// sync back up w/the line height.
+// be multiplied by a value such as 1.125 or 1.25 so they
+// can relateively quickly sync back up w/the line height.
+//
+// In short, fractional values of $vertical-unit should be
+// increments of .125 (i.e., 1/8 of a vertical unit) .
 $vertical-unit: 16px;
 
+// Use this as your base font-size and multiply/divide it as
+// needed to achieve relative sizing. Any value is fine as
+// a divider/multiplier, since vertical rhythm isn't affected.
 $font-size-base: 18px;
 
 // Use're using same unit of measure (px) for font size
