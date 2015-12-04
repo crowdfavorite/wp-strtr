@@ -15,6 +15,17 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
+<script>
+<!--
+// Check for js support (replace no-js class on html)
+document.documentElement.className=document.documentElement.className.replace(/\bno-js\b/,'') + ' js';
+// Check for SVG support (replace no-svg class on html)
+if (!!document.createElementNS && !!document.createElementNS('http://www.w3.org/2000/svg', "svg").createSVGRect) {
+  document.documentElement.className=document.documentElement.className.replace(/\bno-svg\b/,'') + ' svg';
+}
+// -->
+</script>
+
 <?php wp_head(); ?>
 </head>
 
