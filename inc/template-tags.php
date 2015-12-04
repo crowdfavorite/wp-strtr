@@ -7,6 +7,34 @@
  * @package strtr
  */
 
+if ( ! function_exists( 'strtr_featured_image' ) ) :
+/**
+ * Get HTML for the featured image of a post.
+ *
+ * @param int $post_id
+ * @param str $size
+ * @param str $size_fallback
+ * @param null|str $placeholder_fallback_url
+ * @return str
+ */
+function strtr_get_featured_image( $post_id, $size = 'original', $size_fallback = 'thumbnail', $placeholder_fallback_url = null ) {
+
+	ob_start();
+	$featured_img = strtr_get_featured_image_at_size(
+		$post_id, $size, $size_fallback
+	);
+	if ( empty( $featured_img ) && $placeholder_fallback_url ) :
+		$featured_img = $placeholder_fallback_url;
+	endif;
+	if ( $featured_img ) : ?>
+		<figure class="featured-media">
+			<img src="<?php echo esc_url( $featured_img ); ?>" alt="">
+		</figure>
+	<?php endif;
+	return ob_get_clean();
+}
+endif;
+
 if ( ! function_exists( 'the_posts_navigation' ) ) :
 /**
  * Display navigation to next/previous set of posts when applicable.
