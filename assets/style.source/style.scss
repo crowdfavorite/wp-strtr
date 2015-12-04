@@ -15,11 +15,9 @@
 @import "wp-utilities";       // wp utility classes
 @import "wp-layout";          // site layout, dimensions
 @import "wp-menus";           // menus and navigation
-@import "wp-content";         // styles for posts, pages etc
+
 @import "wp-widgets";         // widget-related styles
 @import "wp-media";           // styles for wp media classes
 @import "wp-comments";        // styles for comments
-@import "misc";               // styles not handled elsewhere
 
-// @import "wp-infinite-scroll";
-
+@import "main";               // main style partial
