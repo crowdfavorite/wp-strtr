@@ -130,6 +130,26 @@ function strtr_scripts() {
 add_action( 'wp_enqueue_scripts', 'strtr_scripts' );
 
 /**
+ * Add-to and modify the CSS classes applied to body tag.
+ */
+function strtr_body_class( $classes ) {
+
+	// Adds a class of group-blog to blogs with more than 1 published author.
+	if ( is_multi_author() ) {
+		$classes[] = 'group-blog';
+	}
+
+	if ( is_archive() || is_category() || is_home() || is_search() ) {
+		$classes[] = 'aggregation-view';
+	} else {
+		$classes[] = 'non-aggregation-view';
+	}
+
+	return $classes;
+}
+add_filter( 'body_class', 'strtr_body_class' );
+
+/**
  * Add custom CSS classes to posts via post_class filter.
  */
 function strtr_post_class( $classes, $class, $post_id ) {
