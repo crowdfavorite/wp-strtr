@@ -197,11 +197,6 @@ function strtr_defer_scripts( $tag, $handle ) {
 add_filter( 'script_loader_tag', 'strtr_defer_scripts', 10, 2 );
 
 /**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
-
-/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
