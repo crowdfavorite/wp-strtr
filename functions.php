@@ -130,6 +130,21 @@ function strtr_scripts() {
 add_action( 'wp_enqueue_scripts', 'strtr_scripts' );
 
 /**
+ * Add custom CSS classes to posts via post_class filter.
+ */
+function strtr_post_class( $classes, $class, $post_id ) {
+
+	global $wp_query;
+
+	if ( isset( $wp_query->current_post ) ) {
+		// Class for which result this item is within the loop where it's being called.
+		$classes[] = 'loop-item-' . intval( $wp_query->current_post + 1 );
+	}
+	return $classes;
+}
+add_filter( 'post_class', 'strtr_post_class', 10, 3 );
+
+/**
  * Apply "async=async" attribute to selected enqueued JS.
  *
  * Any scripts you wish to have marked as "async" should be added within this
