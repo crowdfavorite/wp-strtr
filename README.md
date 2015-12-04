@@ -11,7 +11,6 @@ Some notable differences from Underscores:
 * Style variables, definitions, and code comments are in place to allow for maintaining vertical rhythm
 * Some additional (but minimal) styles have been incorporated to reduce the time to go from zero to presentable
 * Fonts are sized with pixels rather than rems
-* Sidebar widgets use h3 headers rather than h3
 
 ## Requirements
 
@@ -39,17 +38,4 @@ This theme is intended to be customized as needed. Here's where to start:
     * Be alphanumeric (underscores are allowed, too)
     * Start with a letter
     * Not be too long
-* Review and modify style partials as needed. Note that the `assets/style.source/lib/` directory is intended for Sass partials that should remain as-is (such as Normalize). However, the following are generally fair game:
-    * `assets/style.source/style.scss` is where all of your partials are imported. Note the import order inside (and supporting comments about that order). In general, the idea is to import libs/partials with no output first, then go from most generic (Normalize, `_semantic.scss`) to most specific.
-    * `assets/style.source/_base.scss` contains the primary Sass variables and configurations.
-    * `assets/style.source/_misc.scss` is to house any styles that don't fit nicely anywhere else.
-    * `assets/style.source/_mixins-custom.scss` is where you should place your mixins that are custom for your project.
-    * `assets/style.source/_mixins-underscores.scss` contains some mixins ported over from Underscores.
-    * `assets/style.source/_semantic.scss` is for styling semantic/vanilla HTML elements. There generally shouldn't be any reference to a class or ID-based selector inside here. Note that this partial (like most others) are loaded after Normalize.
-    * `assets/style.source/_wp-comments.scss` includes styles related to display of comments.
-    * `assets/style.source/_content.scss` includes styles related to display of content.
-    * `assets/style.source/_layout.scss` is where the overall site layout and breakpoints are configured. You'll see code here that sets different numbers of container columns based on the breakpoints defined in `_base.scss`, and code that sets how many columns the content and sidebar areas should cover at those sizes, etc.
-    * `assets/style.source/_wp-media.scss` for styles related to display of images, videos, galleries, etc.
-    * `assets/style.source/_wp-menus.scss` for styling menus
-    * `assets/style.source/_wp-utilities.scss` includes various helper classes, in particular those that are commonly used by WordPress (`.alignleft`, `.alignright`, etc).
-    * `assets/style.source/_wp-widgets.scss` contains styles for widgets in general, as well specific widgets.
+* Review and modify style partials as needed. Note that the `assets/style.source/lib/` directory is intended for Sass partials that should remain as-is (such as Normalize). However, the rest are generally fair game.
