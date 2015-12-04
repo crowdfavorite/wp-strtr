@@ -69,11 +69,6 @@ function strtr_setup() {
 // 		'link',
 // 	) );
 
-	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'strtr_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
 }
 endif; // strtr_setup
 add_action( 'after_setup_theme', 'strtr_setup' );
