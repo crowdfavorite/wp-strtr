@@ -80,8 +80,8 @@ add_action( 'after_setup_theme', 'strtr_setup' );
  */
 function strtr_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'strtr' ),
-		'id'            => 'sidebar-1',
+		'name'          => esc_html__( 'Primary Sidebar', 'strtr' ),
+		'id'            => 'sidebar-primary',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
