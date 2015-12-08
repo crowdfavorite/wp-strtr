@@ -21,8 +21,8 @@ $color-silver:   #DDDDDD;
 $color-white:    #FFFFFF;
 
 // -- By usage.
-$color-site-title: $color-gray;
-$color-site-description: $color-black;
+$color-site-title: lighten($color-black, 15%);
+$color-site-description: $color-gray;
 
 $color-background-body: $color-white;
 $color-background-screen-reader: #f1f1f1;
@@ -31,10 +31,10 @@ $color-background-button: #e6e6e6;
 $color-background-pre: #f1f1f1;
 $color-background-ins: #fff9c0;
 
-$color-text-main: #404040;
-$color-text-headers: $color-gray;
+$color-text-main: lighten($color-black, 10%);
+$color-text-headers: lighten($color-black, 15%);
 $color-text-screen-reader: #21759b;
-$color-text-input: #666;
+$color-text-input: lighten($color-black, 30%);
 $color-text-input-focus: #111;
 
 $color-link: $color-blue;
@@ -46,11 +46,6 @@ $color-border-button-hover: #ccc #bbb #aaa;
 $color-border-button-focus: #aaa #bbb #bbb;
 $color-border-input: #ccc;
 $color-border-abbr: #666;
-
-// Other common style defs.
-// ========================
-// Content box shadows.
-$content-box-shadow: 0 4px 6px rgba(0,0,0,0.12);
 
 // Typography and vertical rhythm.
 // ===============================
