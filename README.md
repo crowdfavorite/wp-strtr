@@ -38,4 +38,5 @@ This theme is intended to be customized as needed. Here's where to start:
     * Be alphanumeric (underscores are allowed, too)
     * Start with a letter
     * Not be too long
+* Customize the various theme properties in style.css as appropriate for your work.
 * Review and modify style partials as needed. Note that the `assets/style.source/lib/` directory is intended for Sass partials that should remain as-is (such as Normalize). However, the rest are generally fair game.
