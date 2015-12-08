@@ -21,11 +21,14 @@ $color-silver:   #DDDDDD;
 $color-white:    #FFFFFF;
 
 // -- By usage.
+$color-site-title: $color-gray;
+$color-site-description: $color-black;
+
 $color-background-body: $color-white;
 $color-background-screen-reader: #f1f1f1;
 $color-background-hr: $color-gray;
 $color-background-button: #e6e6e6;
-$color-background-pre: $color-silver;
+$color-background-pre: #f1f1f1;
 $color-background-ins: #fff9c0;
 
 $color-text-main: #404040;
@@ -105,7 +108,7 @@ $font-size-base: 18px;
 $line-height-base: $vertical-unit * 1.5;
 
 // h1
-$font-size-h1: $font-size-base * 2.45;
+$font-size-h1: $font-size-base * 2;
 $line-height-h1: $line-height-base * 1.75;
 // h2
 $font-size-h2: $font-size-base * 1.5;

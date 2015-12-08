@@ -1,12 +1,17 @@
 
 .comments-area {
 	background-color: $color-white;
-	box-shadow: $content-box-shadow;
+	border: 1px solid $color-silver;
+	border-radius: 4px;
 	padding: $vertical-unit $horizontal-unit;
 
 	.comment-list {
 		list-style: none;
 		padding-left: 0;
+	}
+
+	.form-submit {
+		margin-bottom: 0;
 	}
 }
 

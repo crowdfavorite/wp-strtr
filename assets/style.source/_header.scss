@@ -1,3 +1,29 @@
+.site-header {
+	margin-bottom: $vertical-unit*2;
+}
+.site-branding {
+	padding-top: $vertical-unit;
+}
+.site-title {
+	color: $color-site-title;
+	font-size: $font-size-h1;
+	font-weight: bold;
+	line-height: $line-height-h1;
+	a {
+		&,
+		&:link,
+		&:visited,
+		&:hover,
+		&:active,
+		&:focus {
+			color: $color-site-title;
+		}
+	}
+}
+.site-description {
+	color: $color-site-description;
+}
+
 .main-navigation {
 	clear: both;
 	display: block;
