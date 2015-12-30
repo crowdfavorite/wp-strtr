@@ -172,3 +172,24 @@ function strtr_get_pagination_class_for_hentry() {
 function strtr_is_aggregation_view() {
 	return ( is_archive() || is_category() || is_home() || is_search() );
 }
+
+/**
+ * Get name of the menu assigned to a menu location.
+ *
+ * @param str $location
+ * @return str
+ */
+function strtr_get_menu_name_for_location( $location ) {
+
+	$return           = '';
+	$all_locations    = get_nav_menu_locations();
+
+	if ( isset( $all_locations[ $location ] ) ) {
+		$menu = wp_get_nav_menu_object( $all_locations[ $location ] );
+		if ( $menu ) {
+			$return = $menu->name;
+		}
+	}
+
+	return $return;
+}
