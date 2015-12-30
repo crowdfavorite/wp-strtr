@@ -4,6 +4,7 @@ This is a WordPress starter theme that was adapted from a Sass-based build of [U
 
 Some notable differences from Underscores:
 
+* Several custom helper methods and dynamically-assigned CSS classes. (see `inc/extras.php`, `inc/template-tags.php`, `functions.php`)
 * The [Compass framework](http://compass-style.org/) (for Sass) is used for authoring styles
 * The [Susy gridding library](http://susydocs.oddbird.net/) is used for layout
 * A basic responsive layout with configurable breakpoint variables is ready for use out of the box
