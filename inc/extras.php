@@ -136,3 +136,17 @@ function strtr_get_image_ids_from_gallery_shortcode( $gallery ) {
   }
   return $img_ids;
 }
+
+/**
+ * Get current page in a paginated display.
+ *
+ * Similar to value in $wp_query->query_vars['paged'], but returns 1 on
+ * first page or in a non-paginated view (rather than 0).
+ *
+ * @return int
+ */
+function strtr_get_current_page_in_pagination() {
+	global $wp_query;
+	return empty( $wp_query->query_vars['paged'] ) ? 1 : (int) $wp_query->query_vars['paged'];
+}
+
