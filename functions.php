@@ -159,6 +159,8 @@ function strtr_post_class( $classes, $class, $post_id ) {
 	if ( isset( $wp_query->current_post ) ) {
 		// Class for which result this item is within the loop where it's being called.
 		$classes[] = 'loop-item-' . intval( $wp_query->current_post + 1 );
+		// Class for which pagination page this is being rendered inside.
+		$classes[] = strtr_get_pagination_class_for_hentry();
 	}
 	return $classes;
 }
