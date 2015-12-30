@@ -6,6 +6,32 @@
  */
 
 /**
+ * Get orientation of an attachment image.
+ *
+ * Result is based on the original image, not a resize.
+ *
+ * @param int $attachment_id
+ * @return str|null
+ *  One of: 'landscape'|'portrait'|'square' or null if there was a problem.
+ */
+function strtr_get_image_orientation( $attachment_id ) {
+	$return   = null;
+	$info     = wp_get_attachment_metadata( $attachment_id );
+	if ( $info ) {
+		$w = @$info['width'];
+		$h = @$info['height'];
+		if ( $w > $h ) {
+			$return = 'landscape';
+		} elseif ( $w < $h ) {
+			$return = 'portrait';
+		} else {
+			$return = 'square';
+		}
+	}
+	return $return;
+}
+
+/**
  * Get a post's featured image at a specified size.
  *
  * @see strtr_get_attachment_image_at_size()
