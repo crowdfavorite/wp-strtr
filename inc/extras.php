@@ -150,3 +150,16 @@ function strtr_get_current_page_in_pagination() {
 	return empty( $wp_query->query_vars['paged'] ) ? 1 : (int) $wp_query->query_vars['paged'];
 }
 
+/**
+ * Get a pagenum class to apply individual .hentry items in an aggregated set.
+ *
+ * This gets applied for you automatically via nvb4_post_class().
+ *
+ * @see strtr_get_current_page_in_pagination()
+ * @see strtr_post_class()
+ *
+ * @return str
+ */
+function strtr_get_pagination_class_for_hentry() {
+	return 'for-pagenum-' . strtr_get_current_page_in_pagination();
+}
