@@ -153,7 +153,7 @@ function strtr_get_current_page_in_pagination() {
 /**
  * Get a pagenum class to apply individual .hentry items in an aggregated set.
  *
- * This gets applied for you automatically via nvb4_post_class().
+ * This gets applied for you automatically via strtr_post_class().
  *
  * @see strtr_get_current_page_in_pagination()
  * @see strtr_post_class()
