@@ -163,3 +163,12 @@ function strtr_get_current_page_in_pagination() {
 function strtr_get_pagination_class_for_hentry() {
 	return 'for-pagenum-' . strtr_get_current_page_in_pagination();
 }
+
+/**
+ * Determine if we're currently on an aggregation view.
+ *
+ * @return bool
+ */
+function strtr_is_aggregation_view() {
+	return ( is_archive() || is_category() || is_home() || is_search() );
+}

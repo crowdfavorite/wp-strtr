@@ -139,7 +139,7 @@ function strtr_body_class( $classes ) {
 		$classes[] = 'group-blog';
 	}
 
-	if ( is_archive() || is_category() || is_home() || is_search() ) {
+	if ( strtr_is_aggregation_view() ) {
 		$classes[] = 'aggregation-view';
 	} else {
 		$classes[] = 'non-aggregation-view';
