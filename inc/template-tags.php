@@ -46,15 +46,15 @@ function strtr_the_posts_navigation() {
 		return;
 	}
 	?>
-	<nav class="navigation posts-navigation strtr-posts-pagination" role="navigation">
+	<nav class="navigation posts-navigation strtr-posts-navigation" role="navigation">
 		<h2 class="screen-reader-text"><?php esc_html_e( 'Posts navigation', 'strtr' ); ?></h2><?php
-			echo strtr_get_posts_pagination(); ?>
+			echo strtr_get_posts_navigation(); ?>
 	</nav><!-- .navigation -->
 	<?php
 }
 endif;
 
-if ( ! function_exists( 'strtr_get_posts_pagination' ) ) :
+if ( ! function_exists( 'strtr_get_posts_navigation' ) ) :
 /**
  * Get markup for pagination.
  *
@@ -63,7 +63,7 @@ if ( ! function_exists( 'strtr_get_posts_pagination' ) ) :
  * @param WP_Query|null $custom_query
  * @return string
  */
-function strtr_get_posts_pagination( $custom_query = null ) {
+function strtr_get_posts_navigation( $custom_query = null ) {
 
 	if ( $custom_query && is_a( $custom_query, 'WP_Query' ) ) {
 		$q = $custom_query;

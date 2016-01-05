@@ -167,7 +167,6 @@
 }
 
 .comment-navigation,
-.posts-navigation,
 .post-navigation {
 
 	.site-main & {
@@ -185,4 +184,23 @@
 		text-align: right;
 		width: 50%;
 	}
+}
+
+.posts-navigation {
+	ul {
+		@include pug-clearfix;
+		display: block;
+		list-style: none;
+		margin: $vertical-unit 0;
+		padding: 0;
+		text-align: center;
+	}
+	li {
+		display: inline-block;
+		.page-numbers { // the <a>'s and <span> for current
+			display: block;
+			padding: 0 $horizontal-unit;
+		}
+	}
+
 }
