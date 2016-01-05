@@ -39,7 +39,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php echo strtr_get_posts_pagination(); ?>
+			<?php strtr_the_posts_navigation(); ?>
 
 		<?php else : ?>
 

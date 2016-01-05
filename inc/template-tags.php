@@ -35,6 +35,25 @@ function strtr_get_featured_image( $post_id, $size = 'original', $size_fallback 
 }
 endif;
 
+if ( ! function_exists( 'strtr_the_posts_navigation' ) ) :
+/**
+ * Display navigation to next/previous set of posts when applicable.
+ *
+ */
+function strtr_the_posts_navigation() {
+	// Don't print empty markup if there's only one page.
+	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
+		return;
+	}
+	?>
+	<nav class="navigation posts-navigation strtr-posts-pagination" role="navigation">
+		<h2 class="screen-reader-text"><?php esc_html_e( 'Posts navigation', 'strtr' ); ?></h2><?php
+			echo strtr_get_posts_pagination(); ?>
+	</nav><!-- .navigation -->
+	<?php
+}
+endif;
+
 if ( ! function_exists( 'strtr_get_posts_pagination' ) ) :
 /**
  * Get markup for pagination.
