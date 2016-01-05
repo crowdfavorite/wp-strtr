@@ -35,6 +35,45 @@ function strtr_get_featured_image( $post_id, $size = 'original', $size_fallback 
 }
 endif;
 
+if ( ! function_exists( 'strtr_get_posts_pagination' ) ) :
+/**
+ * Get markup for pagination.
+ *
+ * Uses global $wp_query unless $custom_query is provided.
+ *
+ * @param WP_Query|null $custom_query
+ * @return string
+ */
+function strtr_get_posts_pagination( $custom_query = null ) {
+
+	if ( $custom_query && is_a( $custom_query, 'WP_Query' ) ) {
+		$q = $custom_query;
+	} else {
+		global $wp_query;
+		$q = $wp_query;
+	}
+
+	$links = paginate_links( array(
+		'total' => $q->max_num_pages,
+		'current' => get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1,
+		'next_text' => 'next',
+		'prev_text' => 'prev',
+		'type' => 'array',
+	) );
+
+	$list_items = array();
+	$li_class   = 'strtr-posts-pagination-list-item';
+
+	foreach( $links as $link ) {
+		$list_items[] = sprintf( '<li class="%s">' . $link . '</li>', $li_class );
+	}
+
+	return '<ul class="strtr-posts-pagination-list">'
+		. implode( PHP_EOL, $list_items )
+		. '</ul>';
+}
+endif;
+
 if ( ! function_exists( 'the_posts_navigation' ) ) :
 /**
  * Display navigation to next/previous set of posts when applicable.
