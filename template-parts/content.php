@@ -8,6 +8,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<?php tha_entry_top(); ?>
 	<header class="entry-header">
 		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
@@ -19,6 +20,7 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
+		<?php tha_entry_content_before(); ?>
 		<?php
 			the_content( sprintf(
 				/* translators: %s: Name of current post. */
@@ -26,6 +28,7 @@
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			) );
 		?>
+		<?php tha_entry_content_after(); ?>
 
 		<?php
 			wp_link_pages( array(
@@ -38,4 +41,5 @@
 	<footer class="entry-footer">
 		<?php strtr_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
+	<?php tha_entry_bottom(); ?>
 </article><!-- #post-## -->
