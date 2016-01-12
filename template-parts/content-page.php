@@ -28,6 +28,6 @@
 	<footer class="entry-footer">
 		<?php edit_post_link( esc_html__( 'Edit', 'strtr' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-footer -->
-	<?php tha_entry_top(); ?>
+	<?php tha_entry_bottom(); ?>
 </article><!-- #post-## -->
 

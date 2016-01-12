@@ -5,7 +5,7 @@
  * @package strtr
  */
 
-include( 'inc/themehookalliance/tha-theme-hooks.php' );
+include( __DIR__ . '/inc/themehookalliance/tha-theme-hooks.php' );
 
 if ( ! function_exists( 'strtr_setup' ) ) :
 /**
