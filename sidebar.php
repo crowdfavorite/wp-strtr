@@ -8,8 +8,11 @@
 if ( ! is_active_sidebar( 'sidebar-primary' ) ) {
 	return;
 }
-?>
 
-<div id="secondary" class="widget-area" role="complementary">
-	<?php dynamic_sidebar( 'sidebar-primary' ); ?>
-</div><!-- #secondary -->
+tha_sidebars_before(); ?>
+<div id="secondary" class="widget-area" role="complementary"><?php
+	tha_sidebar_top();
+	dynamic_sidebar( 'sidebar-primary' );
+	tha_sidebar_bottom();
+?></div><!-- #secondary -->
+<?php tha_sidebars_after();
