@@ -5,6 +5,8 @@
  * @package strtr
  */
 
+include( 'inc/themehookalliance/tha-theme-hooks.php' );
+
 if ( ! function_exists( 'strtr_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
