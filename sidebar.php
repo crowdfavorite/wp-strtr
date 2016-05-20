@@ -9,6 +9,6 @@ if ( ! is_active_sidebar( 'sidebar-primary' ) ) {
 	return;
 }
 ?>
-<div id="secondary" class="widget-area" role="complementary"><?php
+<div id="secondary" class="secondary-content-area widget-area" role="complementary"><?php
 	dynamic_sidebar( 'sidebar-primary' );
 ?></div><!-- #secondary -->
