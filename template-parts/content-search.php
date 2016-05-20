@@ -10,7 +10,6 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php tha_entry_top(); ?>
 
 	<header class="entry-header">
 		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
@@ -23,15 +22,12 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-summary">
-		<?php tha_entry_content_before(); ?>
 		<?php the_excerpt(); ?>
-		<?php tha_entry_content_after(); ?>
 	</div><!-- .entry-summary -->
 
 	<footer class="entry-footer">
 		<?php strtr_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 
-	<?php tha_entry_bottom(); ?>
 </article><!-- #post-## -->
 

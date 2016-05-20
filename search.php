@@ -17,9 +17,7 @@ get_header(); ?>
 			</header><!-- .page-header -->
 
 			<?php /* Start the Loop */ ?>
-			<?php tha_content_while_before(); ?>
 			<?php while ( have_posts() ) : the_post(); ?>
-				<?php tha_entry_before(); ?>
 				<?php
 				/**
 				 * Run the loop for the search to output the results.
@@ -28,9 +26,7 @@ get_header(); ?>
 				 */
 				get_template_part( 'template-parts/content', 'search' );
 				?>
-				<?php tha_entry_after(); ?>
 			<?php endwhile; ?>
-			<?php tha_content_while_after(); ?>
 
 			<?php strtr_the_posts_navigation(); ?>
 
