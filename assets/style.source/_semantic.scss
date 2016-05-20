@@ -84,7 +84,6 @@ h6 {
 	line-height: $line-height-h6;
 }
 
-
 p {
 	margin: 0 0 $vertical-unit;
 }
@@ -129,7 +128,7 @@ pre {
 	background: $color-background-pre;
 	font-family: $pre-font-family;
 	font-size: $font-size-base*0.85;
-	line-height: $vertical-unit * 1.5; // multiply by a .25-divisible value to (easily) maintain vert rhythm
+	line-height: $vertical-unit * 1.5;
 	margin-bottom: $vertical-unit;
 	max-width: 100%;
 	overflow: auto;
@@ -172,15 +171,15 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid;
+	border: $vertical-unit*0.1875 solid;
 	border-color: $color-border-button;
 	border-radius: 3px;
 	background: $color-background-button;
 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
 	color: rgba(0, 0, 0, .8);
 	display: inline-block;
-	font-size: $font-size-base * 0.75;
-	height: $vertical-unit * 1.75;
+	font-size: $font-size-base * 0.85;
+	height: $vertical-unit * 2.25;
 	line-height: 1.25; // relative is fine here since we're assigning a height.
 	padding: 0 $horizontal-unit 0;
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
@@ -204,11 +203,11 @@ input[type="password"],
 input[type="search"],
 textarea {
 	color: $color-text-input;
-	border: 1px solid $color-border-input;
+	border: $vertical-unit*0.1875 solid $color-border-input;
 	border-radius: 3px;
 	box-sizing: border-box; // override normalize
 	display: inline-block;
-	font-size: $font-size-base * 0.75;
+	font-size: $font-size-base * 0.85;
 	width: 100%;
 	&:focus {
 		color: $color-text-input-focus;
