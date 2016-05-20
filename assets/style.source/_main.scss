@@ -1,164 +1,22 @@
 // Primary style partial.
 
 
-#masthead,
-#content,
-#colophon {
+.site-header,
+.site-content,
+.site-footer {
 	padding: 0 $horizontal-unit;
 }
 
-.inner.for-masthead,
-.inner.for-content,
-.inner.for-colophon {
-	margin-bottom: $vertical-unit;
-}
-
-.content-area {}
-
-.site-content .widget-area {}
-
-.sticky {
-	display: block;
-}
-
-.hentry {
-	margin: 0 0 $vertical-unit*2;
-}
-
-.byline,
-.updated:not(.published){
-	display: none;
-}
-
-.single .byline,
-.group-blog .byline {
-	display: inline;
-}
-
-.page-content,
-.entry-content,
-.entry-summary {
-	margin: $vertical-unit 0 0;
-}
-
-.page-links {
-	clear: both;
-	margin: 0 0 $vertical-unit;
-}
-
-.blog .format-aside .entry-title,
-.archive .format-aside .entry-title {
-	display: none;
-}
-
-.page-content .wp-smiley,
-.entry-content .wp-smiley,
-.comment-content .wp-smiley {
-	border: none;
-	margin-bottom: 0;
-	margin-top: 0;
-	padding: 0;
-}
-
-.wp-caption {
-	margin-bottom: $vertical-unit;
-	max-width: 100%;
-
-	img[class*="wp-image-"] {
-		@include center-block;
+.inner.for-site-header,
+.inner.for-site-content,
+.inner.for-site-footer {
+	margin: 0 auto;
+	padding: $vertical-unit 0;
+	@media screen and (min-width: $bp-md-min) {
+		width: $cw-md;
 	}
-
-	.wp-caption-text {
-		margin: ($vertical-unit * 0.5) 0;
+	@media screen and (min-width: $bp-lg-min) {
+		width: $cw-lg;
 	}
 }
 
-.wp-caption-text {
-	text-align: center;
-}
-
-.gallery {
-	margin-bottom: $vertical-unit;
-}
-
-.gallery-item {
-	display: inline-block;
-	text-align: center;
-	vertical-align: top;
-	width: 100%;
-
-	.gallery-columns-2 & {
-		max-width: 50%;
-	}
-
-	.gallery-columns-3 & {
-		max-width: 33.33%;
-	}
-
-	.gallery-columns-4 & {
-		max-width: 25%;
-	}
-
-	.gallery-columns-5 & {
-		max-width: 20%;
-	}
-
-	.gallery-columns-6 & {
-		max-width: 16.66%;
-	}
-
-	.gallery-columns-7 & {
-		max-width: 14.28%;
-	}
-
-	.gallery-columns-8 & {
-		max-width: 12.5%;
-	}
-
-	.gallery-columns-9 & {
-		max-width: 11.11%;
-	}
-}
-
-.gallery-caption {
-	display: block;
-}
-
-.comment-navigation,
-.post-navigation {
-
-	.site-main & {
-		margin: 0 0 $vertical-unit;
-		overflow: hidden;
-	}
-
-	& .nav-previous {
-		float: left;
-		width: 50%;
-	}
-
-	& .nav-next {
-		float: right;
-		text-align: right;
-		width: 50%;
-	}
-}
-
-.posts-navigation {
-	ul {
-		@include pug-clearfix;
-		display: block;
-		list-style: none;
-		margin: $vertical-unit 0;
-		padding: 0;
-		text-align: center;
-	}
-	li {
-		display: inline-block;
-		.page-numbers { // the <a>'s and <span> for current
-			display: block;
-			padding: 0 $horizontal-unit;
-		}
-	}
-
-}
