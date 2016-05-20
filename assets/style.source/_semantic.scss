@@ -11,7 +11,7 @@ body {
 	font-family: $body-font-family;
 	font-size: $font-size-base;
 	font-weight: $body-font-weight-normal;
-	line-height: $line-height-base;
+	line-height: $vertical-unit*2;
 }
 
 button,
@@ -22,7 +22,7 @@ textarea {
 	font-family: $form-font-family;
 	font-size: $font-size-base;
 	font-weight: $form-font-weight-normal;
-	line-height: $line-height-base;
+	line-height: $vertical-unit*2;
 }
 
 a {
@@ -128,7 +128,7 @@ pre {
 	@include pug-tab-size(2);
 	background: $color-background-pre;
 	font-family: $pre-font-family;
-	font-size: 0.75em; // ems (not worried about nested <pre>s)
+	font-size: $font-size-base*0.85;
 	line-height: $vertical-unit * 1.5; // multiply by a .25-divisible value to (easily) maintain vert rhythm
 	margin-bottom: $vertical-unit;
 	max-width: 100%;
@@ -138,11 +138,11 @@ pre {
 
 code, kbd, tt, var {
 	font-family: $code-font-family;
-	font-size: 0.875em; // ems, not worried about nesting
+	font-size: $font-size-base*0.85;
 }
 
 abbr, acronym {
-	border-bottom: 1px dotted $color-border-abbr;
+	border-bottom: $vertical-unit*0.0625 dotted $color-border-abbr;
 	cursor: help;
 }
 

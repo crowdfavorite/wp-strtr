@@ -47,8 +47,8 @@ $color-border-button-focus: #aaa #bbb #bbb;
 $color-border-input: #ccc;
 $color-border-abbr: #666;
 
-// Typography and vertical rhythm.
-// ===============================
+// Fonts
+// =====
 
 // -- "helvetica"
 $font-family-helvetica: helvetica, sans-serif;
@@ -61,7 +61,7 @@ $font-weight-normal-monaco: normal;
 $font-weight-bold-monaco: bold;
 
 // -- "courier"
-$font-family-courier: "Courier 10 Pitch", Courier, monospace;
+$font-family-courier: Courier, monospace;
 $font-weight-normal-courier: normal;
 $font-weight-bold-courier: bold;
 
@@ -83,91 +83,84 @@ $code-font-family: $font-family-monaco;
 // -- <pre> tags
 $pre-font-family: $font-family-monaco;
 
-// Set the vertical unit to a value that is smaller than
-// your target $line-height-base value (below) and can
-// be multiplied by a value such as 1.125 or 1.25 so they
-// can relateively quickly sync back up w/the line height.
+// Widths
+// ======
+
+// Somewhat arbitrary horizontal unit. More consistent than not having a
+// consistently referenced unit.
+$horizontal-unit: 10px;
+
+// Padding applied to each side of layout.
+$layout-padding: $horizontal-unit;
+
+// Breakpoints.
+$bp-lg-min: 1180px + ($layout-padding*2);
+$bp-md-max: $bp-lg-min - 1;
+$bp-md-min: 678px;
+$bp-sm-max: $bp-md-min - 1;
+
+// Content widths for different breakpoints.
+// Generally, each of these should equal to the desired breakpoint value
+// minus $layout-padding*2. There is no "sm" because we just fill the browser
+// width as available below md.
+$cw-lg: $bp-lg-min - ($layout-padding*2);
+$cw-md: $bp-md-min - ($layout-padding*2);
+
+// Vertical rhythm
+// ===============
+// Set the vertical unit to a value that can easily be divided by your target base line-height.
+// For example, if your desired base line height is 22px, maybe set the vertical unit to 11px.
 //
-// In short, fractional values of $vertical-unit should be
-// increments of .125 (i.e., 1/8 of a vertical unit) .
-$vertical-unit: 16px;
+// Ultimately, every vertical size that will impact the height/position of content should
+// be set relative to the vertical unit using a 1/16 value multiplier. This way various
+// page elements can easily/automatically sync up back up with the vertical position of
+// other elements.
+//
+// Below is a list of the 1/16 decimal values between 0 and 1 for reference:
+//
+// 0.0625 = 1/16
+// 0.125  = 2/16  (1/8)
+// 0.1875 = 3/16
+// 0.25   = 4/16  (1/4)
+// 0.3125 = 5/16
+// 0.375  = 6/16  (3/8)
+// 0.4375 = 7/16
+// 0.5    = 8/16  (1/2)
+// 0.5625 = 9/16
+// 0.625  = 10/16 (5/8)
+// 0.6875 = 11/16
+// 0.75   = 12/16 (3/4)
+// 0.8125 = 13/16
+// 0.875  = 14/16 (7/8)
+// 0.9375 = 15/16
+//
+$vertical-unit: 12px;
+
+// Text sizes
+// ==========
 
 // Use this as your base font-size and multiply/divide it as
 // needed to achieve relative sizing. Any value is fine as
-// a divider/multiplier, since vertical rhythm isn't affected.
-$font-size-base: 18px;
-
-// Use're using same unit of measure (px) for font size
-// and line-height (not a line-height that's relative to
-// font-size) so vertical rhythm is possible.
-$line-height-base: $vertical-unit * 1.5;
+// a divider/multiplier, since vertical rhythm isn't affected
+// by font size (since we set line height via $vertical-unit).
+$font-size-base: 16px;
 
 // h1
-$font-size-h1: $font-size-base * 2;
-$line-height-h1: $line-height-base * 1.75;
+$font-size-h1:   $font-size-base * 2.5;
+$line-height-h1: $vertical-unit * 5;
 // h2
-$font-size-h2: $font-size-base * 1.5;
-$line-height-h2: $line-height-base * 1.125;
+$font-size-h2:   $font-size-base * 2;
+$line-height-h2: $vertical-unit * 4;
 // h3
-$font-size-h3: $font-size-base * 1.25;
-$line-height-h3: $line-height-base * 1.125;
+$font-size-h3:   $font-size-base * 1.5;
+$line-height-h3: $vertical-unit * 3;
 // h4
-$font-size-h4: $font-size-base * 1.25;
-$line-height-h4: $line-height-base*1.125;
+$font-size-h4:   $font-size-base * 1.25;
+$line-height-h4: $vertical-unit * 2.5;
 // h5
-$font-size-h5: $font-size-base * 1.15;
-$line-height-h5: $line-height-base*0.875;
+$font-size-h5:   $font-size-base * 1.15;
+$line-height-h5: $vertical-unit * 2.25;
 // h6
-$font-size-h6: $font-size-base;
-$line-height-h6: $line-height-base;
+$font-size-h6:   $font-size-base;
+$line-height-h6: $vertical-unit * 2;
 
-// Dimensions
-// ==========
-$layout-width-max: 1140px;
-
-// Somewhat arbitrary horizontal unit. Not used in Susy
-// configuration, but will be more consistent than using ems.
-$horizontal-unit: 10px;
-
-// Breakpoints.
-$bp-xs-max: 479px;
-
-$bp-sm-min: $bp-xs-max + 1;
-$bp-sm-max: 767px;
-
-$bp-md-min: $bp-sm-max + 1;
-$bp-md-max: 991px;
-
-$bp-lg-min: $bp-md-max + 1;
-$bp-lg-max: 1119px;
-
-$bp-xl-min: $bp-lg-max + 1;
-
-// Layout (Susy)
-// =============
-$susy: (
-  flow: ltr,
-  math: fluid,
-  output: float,
-  gutter-position: after,
-  container: $layout-width-max,
-  container-position: center,
-  columns: 9, // use cols for largest size
-  gutters: .1,
-  column-width: false,
-  global-box-sizing: border-box,
-  last-flow: to,
-  debug: (
-    image: hide, // *** one of "show" or "hide" to view grid visualization ***
-    color: rgba(#66f, .25),
-    output: background,
-    toggle: top right,
-  ),
-  use-custom: (
-    background-image: true,
-    background-options: false,
-    box-sizing: true,
-    clearfix: false,
-    rem: false,
-  )
-);

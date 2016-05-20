@@ -10,54 +10,12 @@
 .inner.for-masthead,
 .inner.for-content,
 .inner.for-colophon {
-
-	@include container(1);
 	margin-bottom: $vertical-unit;
-
-	@media screen and (min-width: $bp-sm-min) {
-		@include container(2);
-	}
-	@media screen and (min-width: $bp-md-min) {
-		@include container(3);
-	}
-	@media screen and (min-width: $bp-lg-min) {
-		@include container(6);
-	}
-	@media screen and (min-width: $bp-xl-min) {
-		@include container(9);
-	}
-
 }
 
-.content-area {
+.content-area {}
 
-	@include span(full);
-
-	@media screen and (min-width: $bp-md-min) {
-		@include span(first 2 of 3);
-	}
-	@media screen and (min-width: $bp-lg-min) {
-		@include span(first 4 of 6);
-	}
-	@media screen and (min-width: $bp-xl-min) {
-		@include span(first 5 of 9);
-	}
-}
-
-.site-content .widget-area {
-
-	@include span(full);
-
-	@media screen and (min-width: $bp-md-min) {
-		@include span(last 1 of 3);
-	}
-	@media screen and (min-width: $bp-lg-min) {
-		@include span(last 2 of 6);
-	}
-	@media screen and (min-width: $bp-xl-min) {
-		@include span(last 3 of 9);
-	}
-}
+.site-content .widget-area {}
 
 .sticky {
 	display: block;
