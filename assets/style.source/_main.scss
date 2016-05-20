@@ -10,6 +10,7 @@
 .inner.for-site-header,
 .inner.for-site-content,
 .inner.for-site-footer {
+	@include pug-clearfix;
 	margin: 0 auto;
 	padding: $vertical-unit 0;
 	@media screen and (min-width: $bp-md-min) {
@@ -20,3 +21,19 @@
 	}
 }
 
+// Primary column of content. (#primary)
+.primary-content-area {
+	@media screen and (min-width: $bp-md-min) {
+		float: left;
+		padding-right: $horizontal-unit;
+		width: 63%;
+	}
+}
+
+// Sidebar (or equivalent). (#secondary)
+.secondary-content-area {
+	@media screen and (min-width: $bp-md-min) {
+		float: right;
+		width: 37%;
+	}
+}
