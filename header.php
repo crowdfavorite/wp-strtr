@@ -2,13 +2,12 @@
 /**
  * The header for our theme.
  *
- * Displays all of the <head> section and everything up till <div id="content">
- *
  * @package strtr
  */
 
-?><!DOCTYPE html><html <?php language_attributes(); ?>>
+?><!DOCTYPE html><html <?php language_attributes(); ?> class="no-js no-svg">
 <head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
@@ -33,7 +32,7 @@ if (!!document.createElementNS && !!document.createElementNS('http://www.w3.org/
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'strtr' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
-		<div class="inner for-masthead">
+		<div class="inner for-site-header">
 
 			<div class="site-branding">
 				<div class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></div>
@@ -44,8 +43,8 @@ if (!!document.createElementNS && !!document.createElementNS('http://www.w3.org/
 				wp_nav_menu( array( 'theme_location' => 'primary_menu_slot', 'menu_id' => 'primary-menu' ) );
 			?></nav><!-- #site-navigation -->
 
-		</div><!-- /.inner.for-masthead -->
-	</header><!-- #masthead -->
+		</div><!-- /.inner.for-site-header -->
+	</header><!-- /.site-header -->
 
 	<div id="content" class="site-content">
-		<div class="inner for-content">
+		<div class="inner for-site-content">
