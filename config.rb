@@ -8,5 +8,4 @@ relative_assets = true
 output_style = :compressed
 
 require 'compass/import-once'
-require 'susy'
 require 'compass-pug'

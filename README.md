@@ -6,7 +6,6 @@ Some notable differences from Underscores:
 
 * Several custom helper methods and dynamically-assigned CSS classes. (see `inc/extras.php`, `inc/template-tags.php`, `functions.php`)
 * The [Compass framework](http://compass-style.org/) (for Sass) is used for authoring styles
-* The [Susy gridding library](http://susydocs.oddbird.net/) is used for layout
 * A basic responsive layout with configurable breakpoint variables is ready for use out of the box
 * The Sass/SCSS partials have been consolidated and re-organized to a flatter, simpler structure
 * Style variables, definitions, and code comments are in place to allow for maintaining vertical rhythm
