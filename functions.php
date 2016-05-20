@@ -4,6 +4,7 @@
  *
  * @package strtr
  */
+show_admin_bar( false );
 
 if ( ! function_exists( 'strtr_setup' ) ) :
 /**
